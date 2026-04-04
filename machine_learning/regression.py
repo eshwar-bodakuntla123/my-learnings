@@ -1,3 +1,63 @@
+'''
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+newarr = arr.reshape(-1, 1)
+
+o/p  -
+[[ 1]
+ [ 2]
+ [ 3]
+ [ 4]
+ [ 5]
+ [ 6]
+ [ 7]
+ [ 8]
+ [ 9]
+ [10]
+ [11]
+ [12]]
+
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12])
+
+newarr = arr.reshape(1, -1)
+
+o/p -[[ 1  2  3  4  5  6  7  8  9 10 11 12]]
+
+
+Without random_state → split will be different every time you run the code
+With random_state → split will be exactly the same every time
+Example
+
+Dataset:
+
+X = [1,2,3,4,5,6,7,8]
+----------Without random_state---------
+train_test_split(X, test_size=0.25)
+Run 1:
+Train: [1,3,4,6,7,8]
+Test : [2,5]
+Run 2:
+Train: [2,3,5,6,7,8]
+Test : [1,4]
+Different each time.
+
+---------With random_state-------------
+train_test_split(X, test_size=0.25, random_state=0)
+Run 1:
+Train: [2,4,5,6,7,8]
+Test : [1,3]
+Run 2:
+Train: [2,4,5,6,7,8]
+Test : [1,3]
+'''
+
+
+
+
+
+
+
 import os
 import pandas as pd
 import numpy as np
@@ -31,7 +91,6 @@ x = dataset['MinTemp'].values.reshape(-1,1)
 y = dataset['MaxTemp'].values.reshape(-1,1)
 
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=0)
-
 
 
 
