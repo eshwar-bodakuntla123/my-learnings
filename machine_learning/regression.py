@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -6,7 +7,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
-dataset = pd.read_csv("weather.csv")
+
+base_dir = os.path.dirname(os.path.abspath(__file__))
+print(base_dir)
+file_path = os.path.join(base_dir,"weather.csv")
+dataset = pd.read_csv(file_path)
 # print(dataset)
 # print(dataset.shape)
 # print(dataset.describe())
