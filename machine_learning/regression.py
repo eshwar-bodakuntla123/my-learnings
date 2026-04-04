@@ -8,13 +8,14 @@ from sklearn.linear_model import LinearRegression
 from sklearn import metrics
 
 
+
 base_dir = os.path.dirname(os.path.abspath(__file__))
 print(base_dir)
-file_path = os.path.join(base_dir,"weather.csv")
+parent_dir = os.path.dirname(base_dir)
+print(parent_dir)
+file_path  = os.path.join(parent_dir,"machine_learning","weather.csv")
 dataset = pd.read_csv(file_path)
-# print(dataset)
-# print(dataset.shape)
-# print(dataset.describe())
+print(dataset)
 dataset.plot(x='MinTemp',y='MaxTemp',style='o')
 plt.title('MinTemp vs MaxTemp')
 plt.xlabel('MinTemp')
