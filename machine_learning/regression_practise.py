@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np 
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
-
+from sklearn import metrics
 
 bas_dir = os.path.dirname(os.path.abspath(__file__))
 file_path  = os.path.join(bas_dir,"weather.csv")
@@ -27,3 +27,7 @@ resdf = pd.DataFrame()
 resdf['y_test'] = Y_test.flatten()
 resdf['y_predict'] = y_predict.flatten()
 print(resdf)
+
+print(f"mean absoulte error : {metrics.mean_absolute_error(Y_test,y_predict)}")
+print(f"Mean square error : {metrics.mean_squared_error(Y_test,y_predict)}")
+print(F"ROOT MEAN SQUARE ERROR : {np.sqrt(metrics.mean_squared_error(Y_test,y_predict))}")
