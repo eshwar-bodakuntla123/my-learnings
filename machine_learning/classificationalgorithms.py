@@ -87,6 +87,12 @@ print(f'Accuracy of Logistic regression classifier on test ser (:.2f){logreg.sco
 
 
 '''Decision TREE
+
+❓ Analogy — 20 Questions Game
+You play 20 Questions to guess an animal. 'Is it a mammal?' → Yes.
+'Does it live in water?' → No. 'Does it have stripes?' → Yes → TIGER!
+A decision tree asks yes/no questions about features to reach a prediction.
+
 decision tree are very good with the training dataset because of the process known as 
 overfitting - (overfitting occurs whenever your model learns the training data along with all disturbance in training data)
 but when it comes to classifing outcome on the testing dataset the accuracy reduces
